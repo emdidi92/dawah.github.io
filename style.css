@@ -1,0 +1,296 @@
+:root {
+    --header-bg: rgb(72, 217, 152);
+    --header-co: rgb(0, 0, 0);
+
+    --navlist-bg: rgb(26, 23, 23, .8);
+    --navlist-co: rgb(243, 240, 240);
+    --s-bar-bg: rgb(0, 153, 153);
+    --s-bar-co: rgb(0, 0, 0);
+
+
+
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100%;
+    width: 100%;
+
+
+}
+
+.header {
+    height: 4em;
+    width: 100%;
+    background: var(--header-bg);
+    padding: 1em;
+    position: fixed;
+    z-index: 98;
+}
+
+.header a {
+    text-decoration: none;
+    color: var(--header-co);
+    transition: all .2s ease;
+    display: block;
+}
+
+
+.header a:hover,
+.nav-l-links a:hover {
+    transform: scale(1.2);
+    transition: all .2s ease;
+}
+
+.nav {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+
+.nav-l-links {
+
+    display: none;
+    transition: all .3s ease;
+}
+
+.nav-l-links.active {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 4em;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--navlist-bg);
+    z-index: 2;
+    transition: all .3s ease;
+
+}
+
+.nav-l-links.active .nav-link {
+    margin: 1em;
+}
+
+
+
+.nav-l-links.active a {
+    color: var(--navlist-co);
+    display: block;
+    height: 100%;
+    font-size: xx-large;
+}
+
+
+.hamburger {
+    width: 1.5em;
+    border: 2px solid black;
+    border-radius: 20%;
+    text-align: center;
+    z-index: 99;
+}
+
+.hamburger a {
+    display: block;
+}
+
+
+
+/* main section */
+
+.main {
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    font-size: 1.1em;
+    line-height: 2em;
+    z-index: 97;
+    padding-top: 3em;
+
+}
+
+.main h1,
+.main h2,
+.main h3 {
+    margin: 1em;
+    text-align: center;
+    text-shadow: 2px 2px 3px black;
+    letter-spacing: .2em;
+}
+
+
+.side-bar {
+    background: var(--s-bar-bg);
+    height: 100%;
+    overflow-y: auto;
+}
+
+.content-wrapper {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+
+    padding: 0;
+}
+
+.content {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    text-indent: 2em;
+}
+
+.b-page {
+    height: 100vh;
+}
+
+
+
+.islam,
+.christianity,
+.dawah,
+.dialog {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    padding: 2em 1em;
+    transition: all .3s ease;
+
+}
+
+.islam.active,
+.christianity.active,
+.dawah.active,
+.dialog.active {
+    overflow-y: auto;
+    left: 0;
+    background-color: white;
+    transition: all .3s ease .4s;
+}
+
+
+#about {
+    margin: 1em 0;
+    padding: 1em;
+    text-indent: 2em;
+    width: 100%;
+    height: 100%;
+}
+
+.my-pic {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+}
+
+.my-pic img {
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+
+.contact a {
+    color: var(--s-bar-co);
+}
+
+@media (min-width: 576px) {
+
+
+    .nav-l-links {
+
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .nav-link:nth-child(5) {
+        display: none;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .main {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-flow: row-reverse;
+        overflow-y: hidden;
+
+    }
+
+    .side-bar {
+        width: 40%;
+
+    }
+
+    .content-wrapper {
+        height: 100%;
+        width: 60%;
+
+        overflow-x: hidden;
+    }
+
+    .content {
+        overflow-x: hidden;
+    }
+
+    .islam,
+    .christianity,
+    .dawah,
+    .dialog {
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    #about {
+        overflow-y: auto;
+        width: 100%;
+        overflow-y: auto;
+    }
+
+}
+
+
+@media (min-width: 728px) {}
+
+@media (min-width: 1200px) {
+    .content-wrapper {
+
+        width: 80%;
+    }
+
+    .islam,
+    .christianity,
+    .dawah,
+    .dialog {
+        padding: 0 10%;
+    }
+
+    .side-bar {
+        width: 20%;
+    }
+
+}
